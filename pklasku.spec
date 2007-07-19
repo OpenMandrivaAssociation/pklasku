@@ -1,6 +1,6 @@
 
 %define name	pklasku
-%define version	1.0.2
+%define version	1.0.3
 %define rel	1
 
 %if %{mdkversion} < 1020
@@ -16,7 +16,7 @@ Release:	%mkrel %rel
 License:	GPL
 Group:		System/Servers
 URL:		http://pklasku.sourceforge.net/
-Source:		%name-%version.tar.bz2
+Source:		%name-%version.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	apache-base >= 2.0.54-5mdk
 BuildRequires:	dos2unix
