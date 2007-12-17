@@ -17,7 +17,6 @@ License:	GPL
 Group:		System/Servers
 URL:		http://pklasku.sourceforge.net/
 Source:		%name-%version.tar.gz
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	apache-base >= 2.0.54-5mdk
 BuildRequires:	dos2unix
 Requires:	apache mod_php php-mysql
