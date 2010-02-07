@@ -1,13 +1,6 @@
-
 %define name	pklasku
 %define version	1.0.3
-%define rel	2
-
-%if %{mdkversion} < 1020
-%define webappconfdir %{_sysconfdir}/httpd/conf.d
-%else
-%define webappconfdir %{_sysconfdir}/httpd/conf/webapps.d
-%endif
+%define rel	3
 
 Summary:	PkLasku - Web application to create Finnish invoices
 Name:		%name
@@ -17,11 +10,14 @@ License:	GPL
 Group:		System/Servers
 URL:		http://pklasku.sourceforge.net/
 Source:		%name-%version.tar.gz
-BuildRoot:	%{_tmppath}/%{name}-buildroot
-BuildRequires:	apache-base >= 2.0.54-5mdk
-BuildRequires:	dos2unix
-Requires:	apache mod_php php-mysql
+Requires:	apache-mod_php
+Requires:	php-mysql
+%if %mdkversion < 201010
+Requires(post):   rpm-helper
+Requires(postun):   rpm-helper
+%endif
 BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 PkLasku is a web application written in PHP for printing Finnish
@@ -32,7 +28,6 @@ unlimited number of user accounts. Data is stored in SQL database.
 %prep
 %setup -q -n %name
 
-dos2unix font/*.php font/makefont/makefont.php
 chmod a-x gpl.txt font/*.php font/makefont/*.{map,php}
 
 cat > README.install.urpmi <<EOF
@@ -52,11 +47,12 @@ rm -rf %{buildroot}
 
 install -d -m755 %{buildroot}%{webappconfdir}
 cat > %{buildroot}%{webappconfdir}/%{name}.conf <<EOF
-
 Alias /%{name} %{_var}/www/%{name}
 
 <Directory %{_var}/www/%{name}>
-php_admin_value include_path      ".:%{_sysconfdir}/%{name}"
+    Order allow,deny
+    Allow from all
+    php_admin_value include_path      ".:%{_sysconfdir}/%{name}"
 </Directory>
 EOF
 
@@ -75,10 +71,14 @@ install -m644 CREATESQL %{buildroot}%{_datadir}/%{name}
 rm -rf %{buildroot}
 
 %post
+%if %mdkversion < 201010
 %_post_webapp
+%endif
 
 %postun
+%if %mdkversion < 201010
 %_postun_webapp
+%endif
 
 %files
 %defattr(-,root,root)
