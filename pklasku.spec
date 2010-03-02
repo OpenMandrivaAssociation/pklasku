@@ -1,12 +1,12 @@
 %define name	pklasku
-%define version	1.0.3
-%define rel	3
+%define version	1.0.4
+%define rel	1
 
 Summary:	PkLasku - Web application to create Finnish invoices
 Name:		%name
 Version:	%version
 Release:	%mkrel %rel
-License:	GPL
+License:	GPLv2
 Group:		System/Servers
 URL:		http://pklasku.sourceforge.net/
 Source:		%name-%version.tar.gz
