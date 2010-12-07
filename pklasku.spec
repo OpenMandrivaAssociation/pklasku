@@ -1,6 +1,6 @@
 %define name	pklasku
 %define version	1.0.4
-%define rel	1
+%define rel	2
 
 Summary:	PkLasku - Web application to create Finnish invoices
 Name:		%name
