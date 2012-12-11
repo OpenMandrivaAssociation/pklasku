@@ -90,3 +90,46 @@ rm -rf %{buildroot}
 %{_var}/www/%{name}
 
 
+
+
+%changelog
+* Tue Dec 07 2010 Oden Eriksson <oeriksson@mandriva.com> 1.0.4-2mdv2011.0
++ Revision: 614561
+- the mass rebuild of 2010.1 packages
+
+* Tue Mar 02 2010 Sandro Cazzaniga <kharec@mandriva.org> 1.0.4-1mdv2010.1
++ Revision: 513670
+- fix license
+- update to 1.0.4
+
+* Sun Feb 07 2010 Guillaume Rousse <guillomovitch@mandriva.org> 1.0.3-3mdv2010.1
++ Revision: 501750
+- rely on filetrigger for reloading apache configuration begining with 2010.1, rpm-helper macros otherwise
+
+* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 1.0.3-2mdv2010.0
++ Revision: 430738
+- rebuild
+
+* Wed Jan 02 2008 Olivier Blin <oblin@mandriva.com> 1.0.3-1mdv2009.0
++ Revision: 140731
+- restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Thu Jul 19 2007 Anssi Hannula <anssi@mandriva.org> 1.0.3-1mdv2008.0
++ Revision: 53418
+- 1.0.3
+
+
+* Sun Jan 21 2007 Anssi Hannula <anssi@mandriva.org> 1.0.2-1mdv2007.0
++ Revision: 111485
+- 1.0.2
+- Import pklasku
+
+* Mon Jun 12 2006 Anssi Hannula <anssi@mandriva.org> 1.0.1-1mdv2007.0
+- 1.0.1
+
+* Mon Jun 05 2006 Anssi Hannula <anssi@mandriva.org> 1.0-1mdv2007.0
+- initial Mandriva release
+
