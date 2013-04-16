@@ -1,21 +1,13 @@
-%define name	pklasku
-%define version	1.0.4
-%define rel	2
-
 Summary:	PkLasku - Web application to create Finnish invoices
-Name:		%name
-Version:	%version
-Release:	%mkrel %rel
+Name:		pklasku
+Version:	1.0.4
+Release:	3
 License:	GPLv2
 Group:		System/Servers
 URL:		http://pklasku.sourceforge.net/
 Source:		%name-%version.tar.gz
 Requires:	apache-mod_php
 Requires:	php-mysql
-%if %mdkversion < 201010
-Requires(post):   rpm-helper
-Requires(postun):   rpm-helper
-%endif
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
