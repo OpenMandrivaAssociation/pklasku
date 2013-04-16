@@ -1,7 +1,7 @@
 Summary:	PkLasku - Web application to create Finnish invoices
 Name:		pklasku
 Version:	1.0.4
-Release:	3
+Release:	4
 License:	GPLv2
 Group:		System/Servers
 URL:		http://pklasku.sourceforge.net/
@@ -9,7 +9,6 @@ Source:		%name-%version.tar.gz
 Requires:	apache-mod_php
 Requires:	php-mysql
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 PkLasku is a web application written in PHP for printing Finnish
@@ -37,8 +36,8 @@ EOF
 %install
 rm -rf %{buildroot}
 
-install -d -m755 %{buildroot}%{webappconfdir}
-cat > %{buildroot}%{webappconfdir}/%{name}.conf <<EOF
+install -d -m755 %{buildroot}%{_webappconfdir}
+cat > %{buildroot}%{_webappconfdir}/%{name}.conf <<EOF
 Alias /%{name} %{_var}/www/%{name}
 
 <Directory %{_var}/www/%{name}>
@@ -67,7 +66,7 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %doc INSTALL LICENSE gpl.txt README.install.urpmi
-%config(noreplace) %{webappconfdir}/%{name}.conf
+%config(noreplace) %{_webappconfdir}/%{name}.conf
 %dir %{_sysconfdir}/%{name}
 %attr(0640,root,apache) %config(noreplace) %{_sysconfdir}/%{name}/sqlfuncs.php
 %{_datadir}/%{name}
