@@ -1,4 +1,4 @@
-Summary:	PkLasku - Web application to create Finnish invoices
+Summary:	- Web application to create Finnish invoices
 Name:		pklasku
 Version:	1.0.4
 Release:	4
