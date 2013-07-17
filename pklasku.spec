@@ -40,8 +40,7 @@ cat > %{buildroot}%{_webappconfdir}/%{name}.conf <<EOF
 Alias /%{name} %{_var}/www/%{name}
 
 <Directory %{_var}/www/%{name}>
-    Order allow,deny
-    Allow from all
+    Require all granted
     php_admin_value include_path      ".:%{_sysconfdir}/%{name}"
 </Directory>
 EOF
