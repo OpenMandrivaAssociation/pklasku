@@ -1,7 +1,7 @@
 Summary:	Web application to create Finnish invoices
 Name:		pklasku
 Version:	1.0.4
-Release:	5
+Release:	6
 License:	GPLv2
 Group:		System/Servers
 URL:		http://pklasku.sourceforge.net/
