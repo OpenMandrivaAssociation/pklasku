@@ -4,7 +4,7 @@ Version:	1.0.4
 Release:	6
 License:	GPLv2
 Group:		System/Servers
-URL:		http://pklasku.sourceforge.net/
+URL:		https://pklasku.sourceforge.net/
 Source:		%{name}-%{version}.tar.gz
 Requires:	apache-mod_php
 Requires:	php-mysql
